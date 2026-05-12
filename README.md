@@ -58,6 +58,9 @@ Technical architecture note explaining the verification flow, implemented compon
 ### `.github/workflows/tests.yml`
 GitHub Actions workflow that runs the test suite automatically on Python 3.11 and 3.12.
 
+### `business/`
+Business validation package positioning the project as a secure age-verification system for automated sales in regulated sectors. It includes a one-pager, pitch deck outline, regulatory dossier, contact map, demo video plan and MVP budget.
+
 ---
 
 ## Tech stack
@@ -84,9 +87,10 @@ GitHub Actions workflow that runs the test suite automatically on Python 3.11 an
 ## What this project demonstrates
 
 - End-to-end technical autonomy on a non-trivial scope.
-- Comfort working across the full delivery chain: requirements analysis, prototyping, implementation, testing, regulatory framing, and compliance documentation.
+- Comfort working across the full delivery chain: requirements analysis, prototyping, implementation, testing, regulatory framing, compliance documentation and early business validation.
 - Rigor in privacy and security choices, applied throughout the codebase and not as an afterthought.
-- Clear documentation habits — the kind that translate directly into operational support, incident management, and procedural work.
+- Clear documentation habits — the kind that translate directly into operational support, incident management and procedural work.
+- Ability to translate a technical prototype into a business validation package for regulated markets.
 
 ---
 
