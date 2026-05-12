@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kiosk biometric verification flow</title>
+  <style>
+    :root { --bg:#111827; --panel:#f8fafc; --ink:#111827; --muted:#64748b; --accent:#0f766e; --danger:#b91c1c; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, Segoe UI, Arial, sans-serif; background:var(--bg); color:var(--ink); }
+    main { min-height:100vh; display:grid; place-items:center; padding:32px; }
+    .kiosk { width:min(920px, 100%); min-height:620px; background:var(--panel); border-radius:28px; box-shadow:0 24px 80px #0008; overflow:hidden; }
+    header { display:flex; justify-content:space-between; align-items:center; padding:24px 32px; border-bottom:1px solid #e2e8f0; }
+    header strong { font-size:20px; }
+    nav a { color:var(--accent); text-decoration:none; margin-left:16px; font-weight:700; }
+    section { display:none; padding:44px; min-height:520px; }
+    section:target { display:block; }
+    section:first-of-type { display:block; }
+    body:has(section:target) section:first-of-type { display:none; }
+    h1 { font-size:46px; line-height:1.05; margin:0 0 16px; }
+    h2 { font-size:34px; margin:0 0 18px; }
+    p { color:var(--muted); font-size:19px; line-height:1.5; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px; }
+    .card { background:white; border:1px solid #e2e8f0; border-radius:18px; padding:22px; min-height:150px; }
+    .badge { display:inline-block; padding:5px 10px; border-radius:999px; background:#fee2e2; color:var(--danger); font-weight:700; font-size:13px; }
+    .button { display:inline-block; margin-top:26px; padding:16px 24px; border-radius:14px; background:var(--accent); color:white; text-decoration:none; font-weight:800; }
+    .secondary { background:#e2e8f0; color:#0f172a; }
+    .steps { display:grid; gap:14px; margin-top:22px; }
+    .step { background:white; border-left:6px solid var(--accent); padding:18px; border-radius:12px; }
+    .footer-note { position:absolute; bottom:20px; color:#94a3b8; font-size:13px; }
+    .progress { height:16px; background:#e2e8f0; border-radius:999px; overflow:hidden; margin-top:26px; }
+    .progress span { display:block; height:100%; width:72%; background:var(--accent); }
+  </style>
+</head>
+<body>
+<main>
+  <div class="kiosk">
+    <header>
+      <strong>Licensed tobacco kiosk · Proof of concept</strong>
+      <nav>
+        <a href="#welcome">Welcome</a><a href="#catalog">Catalog</a><a href="#verify">Verify</a><a href="#pay">Pay</a><a href="#confirm">Confirm</a>
+      </nav>
+    </header>
+
+    <section id="welcome">
+      <h1>Self-service purchase with secure age verification</h1>
+      <p>This kiosk is designed for licensed Spanish tobacco retail premises. It verifies identity and legal age before enabling any restricted purchase.</p>
+      <a class="button" href="#catalog">Start</a>
+    </section>
+
+    <section id="catalog">
+      <h2>Catalog</h2>
+      <p>Age-restricted products remain locked until biometric verification is completed.</p>
+      <div class="grid">
+        <div class="card"><span class="badge">18+</span><h3>Product A</h3><p>Restricted item</p></div>
+        <div class="card"><span class="badge">18+</span><h3>Product B</h3><p>Restricted item</p></div>
+        <div class="card"><span class="badge">18+</span><h3>Product C</h3><p>Restricted item</p></div>
+      </div>
+      <a class="button" href="#verify">Verify age</a>
+    </section>
+
+    <section id="verify">
+      <h2>Biometric verification</h2>
+      <p>No personal data is stored in audit logs. The design uses short-lived biometric buffers and anonymized HMAC tokens.</p>
+      <div class="steps">
+        <div class="step">1. Read ID document chip through NFC interface</div>
+        <div class="step">2. Validate document signature against trusted certificates</div>
+        <div class="step">3. Run liveness and 1:1 face matching</div>
+        <div class="step">4. Calculate legal age and produce audit-safe result</div>
+      </div>
+      <a class="button" href="#pay">Continue to payment</a>
+    </section>
+
+    <section id="pay">
+      <h2>Payment</h2>
+      <p>Order summary is shown after age approval. Payment flow is outside the biometric module scope.</p>
+      <div class="card"><h3>Order total</h3><p>Payment method: card/contactless</p></div>
+      <a class="button" href="#confirm">Pay and dispense</a>
+    </section>
+
+    <section id="confirm">
+      <h2>Dispensing</h2>
+      <p>Purchase approved. The robotic dispensing step is represented as a concept mockup, not hardware integration.</p>
+      <div class="progress"><span></span></div>
+      <a class="button secondary" href="#welcome">New session</a>
+    </section>
+  </div>
+</main>
+</body>
+</html>

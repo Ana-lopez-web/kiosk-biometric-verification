@@ -18,8 +18,8 @@ The goal was not just to write code, but to walk the full path from concept to a
 
 ## What's inside
 
-### `biometric_verification.py`
-Python module (~520 lines) implementing a testable verification workflow:
+### `src/biometric_verification.py`
+Python module implementing a testable verification workflow:
 
 - **Mockable NFC chip reading interface** designed around ICAO 9303 MRTD concepts
 - **Mockable cryptographic signature validation interface** intended for FNMT-RCM trust-anchor validation in a production implementation
@@ -29,7 +29,7 @@ Python module (~520 lines) implementing a testable verification workflow:
 - **Anonymized audit logging** with HMAC and daily salt rotation (no PII stored)
 - **Secure memory wiping** using `bytearray` overwrite and `numpy` zeroing on every code path, including exception paths
 
-### `test_biometric_verification.py`
+### `tests/test_biometric_verification.py`
 Unit test suite using `pytest`, `pytest-cov`, `freezegun`, and `unittest.mock`. **51 tests, 94% line coverage**, organised in seven test classes:
 
 - `TestSecureWipe` — buffer zeroing including full RGB image arrays
@@ -42,16 +42,21 @@ Unit test suite using `pytest`, `pytest-cov`, `freezegun`, and `unittest.mock`. 
 
 > Out of scope (explicitly noted): hardware integration tests, biometric SDK calibration per ISO/IEC 19795, presentation attack detection (PAD) evaluation requiring a physical attack kit.
 
-### Portfolio deliverables
+### `demo_session.py`
+Small simulated demo that runs approved and rejected verification sessions without physical hardware.
 
-Additional project deliverables were prepared as portfolio materials outside the current code snapshot:
+```bash
+python demo_session.py
+```
 
-- Touchscreen UI mockups for the customer flow: welcome, catalog, biometric verification, payment and confirmation.
-- Regulatory consultation outline for Spain's Comisionado para el Mercado de Tabacos.
-- GDPR/RGPD compliance analysis covering layered notice, consent and privacy-by-design considerations.
-- 25-week project plan with phases, dependencies and critical-path reasoning.
+### `mockups/kiosk-flow.html`
+Single-file touchscreen concept mockup covering the customer flow: welcome, catalog, biometric verification, payment and confirmation.
 
-These materials are referenced here as part of the end-to-end project concept. The current repository focuses on the Python verification workflow and its test suite.
+### `docs/architecture.md`
+Technical architecture note explaining the verification flow, implemented components, out-of-scope items and production hardening checklist.
+
+### `.github/workflows/tests.yml`
+GitHub Actions workflow that runs the test suite automatically on Python 3.11 and 3.12.
 
 ---
 
@@ -62,8 +67,8 @@ These materials are referenced here as part of the end-to-end project concept. T
 - **NFC reading concept**: PC/SC-style interface (`pyscard` dependency retained for intended integration)
 - **Cryptography concept**: standard library + `cryptography` package for intended X.509 validation
 - **Image processing**: numpy, Pillow
-- **UI prototypes**: HTML5 + CSS concept mockups prepared as portfolio material
-- **Documentation**: regulatory, GDPR/RGPD and project-planning material prepared as portfolio deliverables
+- **UI prototypes**: HTML5 + CSS single-file concept mockup
+- **Documentation**: Markdown architecture notes plus regulatory, GDPR/RGPD and project-planning considerations
 
 ---
 
