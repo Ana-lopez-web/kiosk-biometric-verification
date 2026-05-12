@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Secure Age Verification — Pitch Deck</title>
+  <style>
+    @page { size: 16in 9in; margin: 0; }
+    :root { --ink:#111827; --muted:#64748b; --bg:#f8fafc; --accent:#0f766e; --dark:#0f172a; --line:#d9e1ec; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#cbd5e1; font-family:Inter, Segoe UI, Arial, sans-serif; color:var(--ink); }
+    .slide { width:16in; height:9in; margin:24px auto; background:var(--bg); padding:0.75in 0.9in; box-shadow:0 20px 60px #11182755; page-break-after:always; position:relative; overflow:hidden; }
+    .slide.dark { background:var(--dark); color:white; }
+    .kicker { color:var(--accent); text-transform:uppercase; letter-spacing:.13em; font-weight:900; font-size:18px; }
+    h1 { font-size:76px; line-height:1; margin:22px 0; max-width:1100px; }
+    h2 { font-size:58px; line-height:1.05; margin:12px 0 28px; }
+    h3 { font-size:30px; margin:0 0 12px; }
+    p, li { font-size:26px; line-height:1.35; color:var(--muted); }
+    .dark p, .dark li { color:#cbd5e1; }
+    ul { padding-left:32px; }
+    .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:36px; }
+    .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .card { background:white; border:1px solid var(--line); border-radius:28px; padding:28px; min-height:210px; }
+    .dark .card { background:#1e293b; border-color:#334155; }
+    .num { position:absolute; right:42px; bottom:30px; color:#94a3b8; font-weight:900; }
+    .pill { display:inline-block; border-radius:999px; padding:12px 18px; background:#ccfbf1; color:#115e59; font-weight:900; margin:8px 8px 0 0; font-size:20px; }
+    .flow { display:grid; grid-template-columns:repeat(5,1fr); gap:18px; margin-top:36px; }
+    .step { background:white; border:2px solid var(--line); border-radius:24px; padding:24px; min-height:170px; display:grid; place-items:center; text-align:center; font-size:24px; font-weight:900; }
+    .dark .step { background:#1e293b; border-color:#334155; }
+    .metric { font-size:64px; color:var(--accent); font-weight:950; display:block; }
+    .footer { position:absolute; left:0.9in; bottom:0.35in; color:#94a3b8; font-size:16px; }
+    @media print { body { background:white; } .slide { margin:0; box-shadow:none; } }
+  </style>
+</head>
+<body>
+
+<section class="slide dark">
+  <div class="kicker">Pitch deck</div>
+  <h1>Secure age verification for regulated automated retail</h1>
+  <p>Privacy-by-design verification of legal age and identity for self-service sales in regulated sectors.</p>
+  <span class="pill">Initial use case: licensed tobacco retail in Spain</span>
+  <span class="pill">B2B compliance layer</span>
+  <div class="footer">Ana López Fernández · Kiosk Biometric Verification</div><div class="num">1 / 8</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Problem</div>
+  <h2>Regulated automated sales need stronger controls</h2>
+  <div class="grid2">
+    <div class="card"><h3>Age risk</h3><p>Restricted products require reliable majority-of-age verification before purchase.</p></div>
+    <div class="card"><h3>Audit risk</h3><p>Operators need evidence of compliance without storing excessive personal data.</p></div>
+    <div class="card"><h3>Operational friction</h3><p>Manual checks add cost, queues and inconsistent customer experience.</p></div>
+    <div class="card"><h3>Regulatory uncertainty</h3><p>Unattended or semi-attended sales require careful legal and privacy framing.</p></div>
+  </div><div class="num">2 / 8</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Solution</div>
+  <h2>A modular verification layer for kiosks and self-service terminals</h2>
+  <div class="flow">
+    <div class="step">Document interface</div><div class="step">Certificate validation</div><div class="step">Liveness + face match</div><div class="step">Age decision</div><div class="step">Audit-safe result</div>
+  </div>
+  <p>Approved / rejected / auditable outcome — without retaining unnecessary PII.</p><div class="num">3 / 8</div>
+</section>
+
+<section class="slide dark">
+  <div class="kicker">Why it matters</div>
+  <h2>Compliance value for multiple stakeholders</h2>
+  <div class="grid3">
+    <div class="card"><h3>Retailers</h3><p>Reduce compliance risk and improve controlled self-service flows.</p></div>
+    <div class="card"><h3>Regulators</h3><p>Traceable process, clear failure modes and privacy-first audit design.</p></div>
+    <div class="card"><h3>Hardware partners</h3><p>Differentiated compliance feature for vending and kiosk systems.</p></div>
+  </div><div class="num">4 / 8</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Product concept</div>
+  <h2>Three-layer product architecture</h2>
+  <div class="grid3">
+    <div class="card"><h3>1. Verification engine</h3><p>Age decision, matching logic, audit token and session lifecycle.</p></div>
+    <div class="card"><h3>2. Integration layer</h3><p>NFC reader, camera/liveness SDK, kiosk software, payment and dispenser systems.</p></div>
+    <div class="card"><h3>3. Compliance layer</h3><p>Audit dashboard, reporting, privacy flow and incident records.</p></div>
+  </div><div class="num">5 / 8</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Proof of concept</div>
+  <h2>Current technical assets</h2>
+  <div class="grid3">
+    <div class="card"><span class="metric">51</span><p>Automated pytest tests</p></div>
+    <div class="card"><span class="metric">94%</span><p>Code coverage</p></div>
+    <div class="card"><span class="metric">0 PII</span><p>Stored in audit logs</p></div>
+  </div>
+  <p>Python workflow, simulated demo, touchscreen mockup, architecture notes and business validation package.</p><div class="num">6 / 8</div>
+</section>
+
+<section class="slide">
+  <div class="kicker">Market entry</div>
+  <h2>Validate before building expensive hardware</h2>
+  <ul>
+    <li>Legal feasibility consultation: Comisionado + RGPD.</li>
+    <li>10–20 customer discovery interviews with estancos and vending operators.</li>
+    <li>Partner with kiosk/vending manufacturer for hardware pilot.</li>
+    <li>Package as licensing + SaaS compliance dashboard + support.</li>
+  </ul><div class="num">7 / 8</div>
+</section>
+
+<section class="slide dark">
+  <div class="kicker">Funding ask</div>
+  <h2>Next step: pilot-ready validation package</h2>
+  <div class="grid2">
+    <div class="card"><h3>Funding use</h3><p>Legal review, DPIA, hardware prototype, biometric SDK evaluation, security review and customer discovery.</p></div>
+    <div class="card"><h3>Funding path</h3><p>ENISA Emprendedoras Digitales, INCIBE, CDTI/NEOTEC, hardware partner and accelerator after validation.</p></div>
+  </div>
+  <p><strong>Ask:</strong> support to validate legal feasibility and build a pilot-ready MVP with one industry partner.</p><div class="num">8 / 8</div>
+</section>
+
+</body>
+</html>
