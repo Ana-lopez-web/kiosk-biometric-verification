@@ -26,7 +26,7 @@ Python module implementing a testable verification workflow:
 - **Mockable liveness detection interface** aligned with ISO/IEC 30107-3 concepts
 - **1:1 facial matching** using cosine distance against the chip-extracted photo
 - **Age calculation** with leap-year edge cases
-- **Anonymized audit logging** with HMAC and daily salt rotation (no PII stored)
+- **Minimized audit logging** with HMAC and daily salt rotation (no direct PII stored; treated prudently as pseudonymized until legal/anonymization review)
 - **Secure memory wiping** using `bytearray` overwrite and `numpy` zeroing on every code path, including exception paths
 
 ### `tests/test_biometric_verification.py`
@@ -59,7 +59,7 @@ Technical architecture note explaining the verification flow, implemented compon
 GitHub Actions workflow that runs the test suite automatically on Python 3.11 and 3.12.
 
 ### `business/`
-Business validation package positioning the project as a secure age-verification system for automated sales in regulated sectors. It includes a one-pager, pitch deck outline, regulatory dossier, contact map, demo video plan and MVP budget.
+Business validation package positioning the project as a secure age-verification system for automated sales in regulated sectors. It includes a one-pager, pitch deck outline, regulatory dossier, contact map, demo video plan, MVP budget, Spanish launch plan, RGPD data matrix, legal-product memo, discovery interview guide, Comisionado consultation questions, DPO/legal review notes and funding shortlist.
 
 ---
 
@@ -77,7 +77,7 @@ Business validation package positioning the project as a secure age-verification
 
 ## Design decisions worth noting
 
-- **Privacy by design, not by addition.** Biometric data is wiped on every path, including exceptions. Audit logs use HMAC with daily-rotating salts and store no PII. The consent flow is multi-layer and withdrawable.
+- **Privacy by design, not by addition.** Biometric data is wiped on every path, including exceptions. Audit logs use HMAC with daily-rotating salts, store no direct PII, and are treated prudently as pseudonymized unless a formal anonymization review concludes otherwise. The consent flow is multi-layer and withdrawable.
 - **Cryptographic validation designed against an authoritative source.** The production design targets validation against FNMT-RCM root certificates rather than self-checking only.
 - **Standards-based, not improvised.** Liveness detection is framed around ISO/IEC 30107-3 and NFC reading around ICAO 9303. Where hardware testing is out of scope, it is documented explicitly rather than glossed over.
 - **Regulatory engagement as a first-class deliverable.** The regulatory consultation work covers licensing implications, age-verification standards, fiscal stamping, traceability, post-incident protocols, and RGPD interactions.

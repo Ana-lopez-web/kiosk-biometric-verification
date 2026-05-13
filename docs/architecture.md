@@ -39,7 +39,7 @@ BiometricSession
 - Verification orchestration in `src/biometric_verification.py`.
 - Cosine-distance face matching.
 - Legal-age calculation with leap-year edge cases.
-- HMAC-based daily audit token generation without PII in logs.
+- HMAC-based daily audit token generation without direct PII in logs, treated as pseudonymized until reviewed.
 - Defensive secure wiping for mutable buffers.
 - 51 pytest tests covering success, rejection, error and privacy paths.
 - A local simulated demo in `demo_session.py`.
