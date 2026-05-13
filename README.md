@@ -1,5 +1,7 @@
 # Kiosk Biometric Verification
 
+[![tests](https://github.com/Ana-lopez-web/kiosk-biometric-verification/actions/workflows/tests.yml/badge.svg)](https://github.com/Ana-lopez-web/kiosk-biometric-verification/actions/workflows/tests.yml)
+
 End-to-end design and proof-of-concept implementation of a robotized self-service kiosk with biometric identity verification, intended for deployment in Spanish licensed tobacco retail premises (estancos).
 
 The project covers the core design of a regulated, age-restricted automated retail solution: a Python verification workflow with mockable interfaces for cryptographic and biometric checks, a unit-test suite with pytest, and documented regulatory, GDPR/RGPD and project-planning considerations.
