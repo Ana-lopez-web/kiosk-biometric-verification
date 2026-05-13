@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Verificación segura de edad — One Pager</title>
+  <style>
+    @page { size: A4; margin: 12mm; }
+    :root { --ink:#111827; --muted:#5b6472; --soft:#eef2f7; --accent:#0f766e; --accent2:#0f172a; --line:#d8dee8; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#dfe5ee; color:var(--ink); font-family: Inter, Segoe UI, Arial, sans-serif; }
+    .page { width:210mm; min-height:297mm; margin:24px auto; background:#fff; padding:18mm; box-shadow:0 20px 60px #11182733; }
+    header { border-bottom:3px solid var(--accent); padding-bottom:18px; }
+    .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.12em; font-weight:800; font-size:12px; }
+    h1 { font-size:38px; line-height:1.05; margin:10px 0 12px; max-width:850px; }
+    .subtitle { font-size:18px; color:var(--muted); line-height:1.45; max-width:850px; }
+    .grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:22px; }
+    .card { border:1px solid var(--line); border-radius:18px; padding:18px; background:#fff; }
+    .card.dark { background:var(--accent2); color:#fff; border:0; }
+    .card.soft { background:var(--soft); }
+    h2 { font-size:19px; margin:0 0 10px; }
+    p, li { color:var(--muted); font-size:14.5px; line-height:1.45; }
+    .dark p, .dark li { color:#cbd5e1; }
+    ul { margin:8px 0 0; padding-left:20px; }
+    .flow { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin-top:12px; }
+    .step { background:var(--soft); border-radius:14px; padding:12px 8px; text-align:center; font-size:12px; font-weight:800; color:#273244; min-height:70px; display:grid; place-items:center; }
+    .metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px; }
+    .metric { background:#ecfdf5; border:1px solid #a7f3d0; border-radius:16px; padding:14px; }
+    .metric strong { display:block; font-size:22px; color:var(--accent); }
+    .metric span { color:#375569; font-size:12.5px; font-weight:700; }
+    footer { margin-top:22px; padding-top:14px; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:16px; color:var(--muted); font-size:12px; }
+    .tag { display:inline-block; padding:6px 10px; border-radius:999px; background:#e6fffb; color:var(--accent); font-weight:800; font-size:12px; margin:4px 4px 0 0; }
+    @media print { body { background:#fff; } .page { margin:0; box-shadow:none; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="eyebrow">Capa de cumplimiento privacy-first para venta automatizada regulada</div>
+      <h1>Verificación segura de edad para retail automatizado en sectores regulados</h1>
+      <p class="subtitle">Prueba de concepto que combina decisión de mayoría de edad, garantía de identidad y trazabilidad auditable sin almacenar datos personales innecesarios.</p>
+    </header>
+
+    <section class="metrics">
+      <div class="metric"><strong>51</strong><span>tests automatizados</span></div>
+      <div class="metric"><strong>94%</strong><span>cobertura de código</span></div>
+      <div class="metric"><strong>0 PII</strong><span>en registros de auditoría</span></div>
+    </section>
+
+    <section class="grid">
+      <div class="card dark">
+        <h2>El problema</h2>
+        <p>La venta automatizada de productos restringidos exige más que un flujo normal de vending. Los operadores deben verificar la edad legal, reducir fraude y conservar evidencia de venta responsable sin aumentar el riesgo de privacidad.</p>
+      </div>
+      <div class="card">
+        <h2>La solución</h2>
+        <p>Una capa modular de verificación para kioscos y terminales de autoservicio: interfaz de lectura documental, validación de certificados, prueba de vida, comparación facial 1:1, cálculo de mayoría de edad y token de auditoría basado en HMAC.</p>
+      </div>
+      <div class="card soft">
+        <h2>Caso de uso inicial</h2>
+        <p>Estancos autorizados en España. La oportunidad a largo plazo es más amplia: vending regulado, alcohol, farmacia/parafarmacia, accesos sensibles a identidad y otros entornos con restricción de edad.</p>
+      </div>
+      <div class="card">
+        <h2>Modelo de negocio</h2>
+        <ul>
+          <li>Licencia de software por terminal/dispositivo.</li>
+          <li>Panel SaaS de cumplimiento y auditoría.</li>
+          <li>Fees de integración y proyectos piloto.</li>
+          <li>Contratos de mantenimiento y soporte.</li>
+          <li>Modelo con partner hardware/OEM.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:18px">
+      <h2>Flujo de verificación</h2>
+      <div class="flow">
+        <div class="step">Interfaz documental</div>
+        <div class="step">Validación de firma</div>
+        <div class="step">Prueba de vida + rostro</div>
+        <div class="step">Decisión de edad</div>
+        <div class="step">Resultado auditable</div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Activos actuales</h2>
+        <ul>
+          <li>Workflow de verificación en Python.</li>
+          <li>Interfaces mockables para componentes dependientes de hardware.</li>
+          <li>Suite de tests automatizados y script demo.</li>
+          <li>Mockup táctil y documentación de arquitectura.</li>
+          <li>Paquete de validación de negocio y mapa de contactos.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Siguiente hito</h2>
+        <ul>
+          <li>Revisión de viabilidad legal y RGPD.</li>
+          <li>10–20 entrevistas de descubrimiento.</li>
+          <li>Búsqueda de partner hardware/integración.</li>
+          <li>Presupuesto y roadmap de MVP pilotable.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section style="margin-top:18px">
+      <span class="tag">Privacy by design</span>
+      <span class="tag">Retail regulado</span>
+      <span class="tag">Verificación de edad</span>
+      <span class="tag">Auditabilidad</span>
+      <span class="tag">Python + pytest</span>
+      <span class="tag">Potencial B2B SaaS</span>
+    </section>
+
+    <footer>
+      <div><strong>Ana López Fernández</strong> · Técnica de Soporte IT · ASIR especialidad Ciberseguridad</div>
+      <div>github.com/Ana-lopez-web/kiosk-biometric-verification</div>
+    </footer>
+  </main>
+</body>
+</html>
