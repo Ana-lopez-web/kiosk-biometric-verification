@@ -1,0 +1,11 @@
+# Hardware-only dependencies for the future physical MVP (NFC reader, smart cards).
+#
+# These are NOT required to run the module or its test suite: the codebase uses
+# mockable interfaces (typing.Protocol) so no hardware driver is imported in tests.
+#
+# On Linux, pyscard needs the PC/SC development headers to build:
+#   sudo apt-get install -y swig libpcsclite-dev
+#
+# Install with:  pip install -r requirements-hardware.txt
+
+pyscard>=2.0.7

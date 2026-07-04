@@ -1,7 +1,9 @@
 numpy>=1.24,<3.0
-pyscard>=2.0.7
 cryptography>=41.0
 Pillow>=10.0
+
+# Hardware drivers (physical NFC reader, etc.) live in requirements-hardware.txt.
+# They are not needed to run the test suite, which uses mockable interfaces.
 
 # --- testing ---
 pytest>=7.4
